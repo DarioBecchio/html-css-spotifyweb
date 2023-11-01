@@ -3,6 +3,11 @@
     padding: 0px;
     box-sizing: border-box;
 }
+.debug .col-2{
+    border:2px dashed red;
+    aspect-ratio: 1 / 1;
+}
+
 
 /*site color*/
 :root{
@@ -30,6 +35,7 @@ main{
     height: calc(100% - 60px);
     background-color: var(--sidebar);    
     width: 60px;
+    overflow-y: auto;
 }
     
 
@@ -40,6 +46,7 @@ main{
     position: absolute;
     top: 0px;
     right: 0px;
+    overflow-y: auto;
 
 }
 
@@ -56,15 +63,14 @@ a{
     text-decoration: none;
 }
 
-.row {
-     display: flex;
-     margin: 0 -1px;
-}
+
 
 .col-2{
     width: calc(100%/12*2);
     min-height: 100px;
+    padding:0.5rem;
 }
+
 /*sidebar*/
 
 .logo{
@@ -173,11 +179,24 @@ a{
     flex-wrap: wrap;
 }
 .col-2 > img{
-    height: 100px;
+    width: 100%;
 }
 
 
 /*end menu*/
+
+/*player*/
+.tools{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left , .center , .right{
+    display: flex;
+    align-items: center;
+}
+/*end player*/
 
 /*Responsive layout*/
 @media  screen and (min-width:480px) {
