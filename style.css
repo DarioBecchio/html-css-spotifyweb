@@ -15,49 +15,41 @@
 }
 /*end site color*/
 
-.debug{
-    .debug .container{
-        border: 2px solid red;
-    }
-}
+
 
 /*common rule*/
-.container{      
-    width: 100%;
+main{
+    height: 100vh;
     position: relative;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-}
-li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
 }
 
-.gray{
-    color:#A3A3A3
+.sidebar-sm{
+    height: calc(100% - 60px);
+    background-color: var(--sidebar);
+    
+    width: 60px;
 }
-.white{
-    color: var(--textwhite);
+    
+
+.menu-sm{
+    height: calc(100% - 60px);
+    width: calc(100% - 60px);
+    background-color: var(--mainmenu);  
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
 }
-/*end common*/
+.player{
+    height:60px;
+    width: 100%;
+    background-color: var(--player);
+}
 
 /*sidebar*/
-.sidebar-sm{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--sidebar);
-    height: calc(100vh - 60px);
-}
 
 .logo{
     display: none;    
-}
-.upper-menu{
-    display: flex;
-    flex-direction: column;    
 }
 .logo-small{
     height: 30px;
@@ -66,173 +58,33 @@ a{
     display: block;
 }
 
-.home{
-    display: none;
-}
-
-.small-home{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
-.small-home li{
-    height: 30px;
-    width: 30px;
-    text-align: center;
-}
-.playlist{
-    display:none;
-}
-.add{
-    width: 30px;
-    height: 30px;
-    background-color: var(--textgray);
-}
-.create{
-    display: flex;
-    align-items: center;
-    
-}
-.playlist li{
-    color:var(--textgray);
-}
-.create span{
-    margin-left: 0.5rem;
-}
-.app-download{
-    display:none;
-}
-.app-download-small{
-    display:block;
-    text-align: center;
-}
-hr{
-    margin: 0 0.5rem;
-    color: gray;
-    display: none;
-}
-.user{
-    display:none;
-}
-.small-user{
-    display:block;
-    text-align: center;
-    height: 30px;
-    width: 30px;
-}
-/*end sidebar*/
-
-/*main menu*/
-.menu-sm{
-height: calc(100vh - 60px);
-width: calc(100% - 60px);
-background-color: var(--mainmenu);
-position:absolute;
-top: 0;
-right: 0;
-}
-/*end main menu*/
-
-
-/*footer*/
-.player{
-    height:60px;
-    width: 100%;
-    background-color: var(--player);
-}
-/*end footer*/
-
 
 
 
 /*Responsive layout*/
 @media  screen and (min-width:480px) {
-    .sidebar{
-            display:flex;
-            justify-content: space-between;
-            flex-direction: column;    
-        }  
-    .logo{
-        width: 120px;
-        height: 40px;
-        display: block;
-        margin: 0.5rem 0.75rem;
-       }
-    img.logo {
-        height: 100%;
-       }
-    .logo-small{
-        display: none;
-       }
-    .home{
-        display: block;
-       }
-    .house{
-        color: var(--textwhite);
-    }
+/*common responsive*/
+.sidebar{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 200px;            
+} 
+.menu {
+    width: calc(100% - 200px);
+} 
+/*end common responsive*/
 
-    .small-home{
-        display: none;
-       }
-    .playlist{
-        display:block;
-       }
-    .playlist li {
-        margin: 1rem;
+/*responsive sidebar*/
+.logo{
+    width: 120px;
+    height: 40px;
+    display: block;
+    margin: 0.5rem 0.75rem;
+   }
+.logo-small{
+    display: none;
+   }
+
+/*end responsive sidebar*/
     }
-    .playlist h3{
-        margin: 1rem;
-    }
-    .app-download{
-        display:flex;
-        align-items: center;
-        margin: 0.5rem 0.75rem;
-    }
-    .app-download span{
-        margin: 0rem 0.5rem;
-    }
-       
-    .app-download-small{
-        display:none;
-       }
-    .user{
-        display:flex;
-        align-items: center;
-        margin: 0.5rem 0.75rem;
-       }
-    .small-user{
-        display:none;
-    }
-    hr{
-        margin: 0 0.5rem;
-        color: gray;
-        display: block;
-    }
-    .bottom-lg{
-        margin:auto;
-            width: 100%;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-    }
-    .menu {
-        height: calc(100vh - 60px);
-        width: calc(100% - 200px);
-        background-color: var(--mainmenu);
-        position:absolute;
-        top: 0;
-        right: 0;
-        }
-    }
-    @media  screen and (min-width:1024px){
-        
-        .bottom-md{
-            margin:auto;
-            width: 50%;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-        }
-    
-        
-    }
-      
-    
