@@ -24,9 +24,11 @@ main{
 }
 
 .sidebar-sm{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: calc(100% - 60px);
-    background-color: var(--sidebar);
-    
+    background-color: var(--sidebar);    
     width: 60px;
 }
     
@@ -40,12 +42,29 @@ main{
     right: 0px;
 
 }
+
 .player{
     height:60px;
     width: 100%;
     background-color: var(--player);
 }
 
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.row {
+     display: flex;
+     margin: 0 -1px;
+}
+
+.col-2{
+    width: calc(100%/12*2);
+    min-height: 100px;
+}
 /*sidebar*/
 
 .logo{
@@ -58,8 +77,107 @@ main{
     display: block;
 }
 
+.upper-menu{
+    display: flex;
+    flex-direction: column;    
+}
+
+.home{
+    display: none;
+}
+.small-home{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+.small-home li{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.playlist{
+    display:none;
+}
 
 
+.app-download{
+    display:none;
+}
+.app-download-small{
+    display:block;
+    text-align: center;
+}
+
+.user{
+    display:none;
+}
+.small-user{
+    display:block;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+}
+
+/*end sidebar*/
+
+/*menu*/
+.top{
+    
+    width: 100%;
+    background-color: var(--topmenu);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.upgrade{
+    height: 50px;
+    width: 170px;
+    color:white;
+    border-radius: 5rem;
+    border: 1px solid white; 
+    padding:0.5rem;
+    margin: 15px;
+    background-color: black;
+}
+.upgrade:hover{
+    transform: scale(1.2);
+}
+
+.bottom{
+    margin:auto;
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.selector{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color:var(--textgray);
+}
+
+.creation , .famous , .recently{
+    margin-left: 1rem;
+    margin-right: 1.5rem;
+}
+.recently h1{
+    margin-bottom: 1rem;
+    color: var(--textwhite);    
+} 
+
+.collection-1 , .collection-2 , .collection-3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.col-2 > img{
+    height: 100px;
+}
+
+
+/*end menu*/
 
 /*Responsive layout*/
 @media  screen and (min-width:480px) {
@@ -85,6 +203,60 @@ main{
 .logo-small{
     display: none;
    }
+.home{
+    display: block;
+    color:var(--textgray);
+}
+.home:first-child{
+color: var(--textwhite);
+}
+.home li{
+    margin: 1rem;
+}
+.small-home{
+    display: none;
+}
 
+.playlist{
+    display:block;
+    color: var(--textgray);
+}
+.playlist li {
+    margin: 1rem;
+}
+.playlist h3{
+    margin: 1rem;
+}
+
+.app-download{
+    display:flex;
+    align-items: center;
+    margin: 0.5rem 0.75rem;
+    color: var(--textgray);
+}
+.app-download span{
+    margin: 0rem 0.5rem;
+}
+   
+.app-download-small{
+    display:none;
+   }
 /*end responsive sidebar*/
+
+/*responsive menu*/
+.bottom-lg{
+    margin:auto;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+}   
+/*end responsive menu*/
+}
+@media  screen and (min-width:1024px) {
+    .bottom-md {
+        margin:auto;
+        width: 50%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
+}
