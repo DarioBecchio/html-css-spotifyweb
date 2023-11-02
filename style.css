@@ -12,7 +12,7 @@
 .debug .player{
     border: 1px solid green;
 }
-.debug .resume{
+.debug .d-resume , .t-resume{
     border:2px dashed red;
 }
 .debug .col-2{
@@ -39,8 +39,17 @@ main{
   height: 100vh; 
   position:relative;     
 }
-.col-2{
-    width: calc(100%/12*2);
+li{
+    list-style: none;
+    color:var(--textgray);
+}
+
+a{
+    text-decoration: none;
+    text-decoration-color: var(--textgray);
+}
+.col-6{
+    width: 50%;
     min-height: 80px;
     min-width: 80px;
     padding:0.5rem;
@@ -53,6 +62,7 @@ img{
 .row{
     display:flex;
     flex-wrap: wrap;
+    margin:1rem 0;
 }
 /*end common rule*/
 
@@ -147,31 +157,32 @@ img{
 .selector > li{
     margin: 0 1rem;
 }
-.resume{
-    height:100%;
-    width:95%;
+.c-resume{
+    width: 95%;
+    height: 100%;
     margin-left: 1rem;
     margin-right: 2rem;
+
 }
 .card{
     position:relative;
 }
 .push{
     position:absolute;
-    top:50%;
-    left:50%;
-    display: block;    
+    top: 60px;
+    color: transparent; 
+    width: 100%;
+    height: 100%;
+}
+
+.push:hover{
+   color: white;
 }
 
 
-.font-style{
-    color:white;
-    font-size:xx-large;
-    font-weight:bolder;
-}
 
-.recently-played{
-
+.recently-played , .collection-create , .collection-popular{
+    margin: 1rem 0;
 }
 /*end menu*/
 
@@ -309,8 +320,26 @@ img{
     top:0;
     right: 0;
     overflow-y: auto;
-
+}
+.col-2{
+    width: calc(100%/12*2);
+    min-height: 80px;
+    min-width: 80px;
+    padding:0.5rem;
+    text-align: center;
+}
+.d-resume{
+    
+    width:100%;
+    margin-left:0;
+    margin-right:0;
+    
 }
 /*end responsive menu*/
     
+}
+@media  screen and (min-width:1024px){
+    .t-resume{
+        width: 95%;
+    }
 }
