@@ -18,6 +18,9 @@
 .debug .col-2{
     border: 2px dashed blue;
 }
+.debug .circle{
+    border:2px solid brown;
+}
 
 
 
@@ -37,16 +40,22 @@
 /*common rule*/
 main{
   height: 100vh; 
-  position:relative;     
+  position:relative; 
+  font-family: 'Montserrat', sans-serif;
+    
 }
 li{
-    list-style: none;
-    color:var(--textgray);
+    list-style: none;    
 }
 
 a{
     text-decoration: none;
-    text-decoration-color: var(--textgray);
+    color: var(--textgray);
+}
+
+button{
+    border: none;
+    color: transparent;
 }
 .col-6{
     width: 50%;
@@ -64,41 +73,49 @@ img{
     flex-wrap: wrap;
     margin:1rem 0;
 }
+h1{
+    color:var(--textwhite);
+    font-weight: bolder;
+}
+h2{
+    color: var(--textwhite);
+    font-weight: bolder;
+    font-size: small;
+}
 /*end common rule*/
 
 /*Sidebar*/
 .c-sidebar{
     height: calc(100% - 60px);
-    width:60px;    
+    width:40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
 }
 .c-logo{
     display: none;    
 }
 .d-logo{
-    height: 30px;
-    width: 30px;
+    height: 35px;
     padding:0.25rem;
     display: block;
+    text-align: center;
 }
 .upper-menu{
     display: flex;
     flex-direction: column;    
 }
 
-.c-home{
-    display: none;
-}
 .d-home{
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
+}
+.c-home{
+    display: none;
+}
 
-}
-.d-home li{
-    height: 30px;
-    width: 30px;
-    text-align: center;
-}
+
 
 .playlist{
     display:none;
@@ -111,12 +128,23 @@ img{
     display:block;
     text-align: center;
 }
+.download-simbol{
+    width: 20px;
+    height: 20px;
+}
+
+.user-button{
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--playergray);
+}
 /*end sidebar*/
 
 /*Menu*/
 .c-menu{
     height: calc(100% - 60px);
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     position: absolute;
     top:0;
     right: 0;
@@ -131,59 +159,110 @@ img{
 }
 .upgrade{
     height: 40px;
-    width: 170px;
-    color:white;
+    width: 180px;
+    color:var(--textwhite);
     border-radius: 5rem;
     border: 1px solid white; 
-    padding:0.5rem;
+    padding:0.25rem 0.5rem;
     margin: 15px;
     background-color: black;
+    font-weight: bold;
+    font-size: x-small;
 }
 .upgrade:hover{
     transform: scale(1.1);
 }
 
-.bottom{
-    width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+.c-bottom{
+    width: 70%;
+    margin: auto;    
 }
 .selector{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     color:var(--textgray);
+    font-size: x-small;
+    font-weight: bold;
+}
+.selector > li :hover{
+    color: var(--textwhite);
 }
 .selector > li{
     margin: 0 1rem;
+    
+}
+.selector > li > a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.under-line{
+    height:5px;
+    width: 40px;
+    background-color: transparent;
+}
+.under-line:hover{
+    background-color: greenyellow;
 }
 .c-resume{
     width: 95%;
     height: 100%;
     margin-left: 1rem;
     margin-right: 2rem;
+}
 
+.recently-played , .collection-create , .collection-popular{
+    margin: 1rem 0;
 }
 .card{
     position:relative;
 }
+.card > span{
+    color: var(--textgray);
+    font-weight: bold;
+    font-size: small;
+}
+.collection-create > span{
+    color: var(--textgray);
+    font-weight: bold;
+    font-size:smaller;
+}
+.collection-popular > span{
+    color: var(--textgray);
+    font-weight: bold;
+    font-size:smaller;
+}
 .push{
     position:absolute;
-    top: 60px;
+    top: 0px;
     color: transparent; 
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .push:hover{
    color: white;
 }
 
-
-
-.recently-played , .collection-create , .collection-popular{
-    margin: 1rem 0;
+.circle{
+    min-height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
 }
+
+.d-user{
+    display: none;
+}
+.c-user{
+    display: block;
+    text-align: center;
+}
+
+
+
+
 /*end menu*/
 
 /*Player*/
@@ -194,61 +273,99 @@ img{
     bottom:0;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
 }
-
-.left , .right{
+.left{
     display: flex;
     align-items: center;
     margin: 1rem;
+    flex-grow: 1;
 }
 
-.on-play-sm{
-    height: 20px;
-    width: 20px;
+
+.on-play{
+    height: 40px;
+    width: 40px;
+    aspect-ratio: 1;
 }
-.on-play-sm > img{
-    height: 100%;
+.play-description > h3{
+    color: var(--textwhite);
+    font-size: smaller;
+    font-weight: bolder;
 }
-.on-play > h3 , p{
-    margin-left: 0.5rem;
+.play-description > span{
+    color: var(--textgray);
+    font-size: smaller;
+    font-weight: bolder;
+}
+.play-description > span:hover{
+    text-decoration: underline;
+}
+.play-description > h3 , span{
+    margin-left: 0.5rem;    
+}
+.left-simbols{
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+.left-simbols > a :hover{
+    color: var(--textwhite);
 }
 
 .center{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-grow: 2;
 }
 .play-button{
     display: flex;
     justify-content: space-evenly;
-    color:var(--textwhite)
+    color:var(--textwhite);
+    width: 50%;
+    margin: auto;
+}
+.play-button :hover{
+    color: var(--textwhite);
 }
 .play-line{
     display: flex;
-    align-items: center;    
+    align-items: center; 
+    width: 80%;
+    margin: auto;
+    justify-content: center;  
 }
 .white-line{
-    width: 100px;
+    width: 60%;
     height:4px;
     background-color: var(--playergray);
-    margin: 0 0.5rem;
     border-radius: 5px;
 }
 .grey-line{
-    width: 60px;
+    width: 100%;
     height:4px;
-    background-color: var(--mainmenu);
+    background-color: var(--textgray);
     border-radius: 5px;
 }
+.play-line > span {
+    margin:0 0.5rem;
+}
 
-
+.right{
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
 .volume{
     display: flex;
     align-items: center;
 }
 .right a {
     margin: 0 0.5rem;
+    font-size: smaller;
 }
 .volume-bar{
     width: 50px;
@@ -281,21 +398,62 @@ img{
     display: none;
    }
 
-.home{
-    display: block;
-    color:var(--textgray);
-}
+.c-home{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0.75rem;
 
+}
+.c-home li{
+    height: 30px;
+    width: 30px;
+    color:var(--textgray);
+    display: flex;
+    align-items: center;
+    font-size: small;
+    font-weight: lighter;
+}
+.d-home{
+    display: none;
+}
+   
 .playlist{
     display:block;
-    color: var(--textgray);
+    
 }
+
+
 .playlist li{
     margin: 1rem;
+    color: var(--textgray);
+    font-size: x-small;
+    font-weight: bold;
 }
 .playlist h3{
     margin: 1rem;
+    color: var(--textwhite);
 }
+
+.add{
+    background-color: var(--playergray);
+    color: black;
+    padding: 0.5rem;
+    margin-right: 0.25rem;
+}
+.fa-solid{
+    font-weight: bolder;
+}
+.create{
+    display: flex;
+    align-items: center;
+}
+.crea-playlist{
+    font-weight: bold;
+    font-size: small;
+    color: var(--textgray);
+}
+
+
 
 .d-app-download{
     display:flex;
@@ -310,10 +468,25 @@ img{
 .c-app-download{
     display:none;
    }
+.d-user{
+    display: block;
+    display: flex;
+    align-items: center;
+    margin:0.5rem;
+}
+.John-Doe{
+    font-size: medium; 
+    font-weight: bolder;
+    color: var(--textwhite);
+    margin-left: 0.5rem;
+}
+.c-user{
+    display: none;
+}
 /*end responsive sidebar*/
 
 /*responsive menu*/
-.d-menu{
+.c-menu{
     height:calc(100% - 60px);
     width: calc(100% - 200px);
     position: absolute;
@@ -321,6 +494,13 @@ img{
     right: 0;
     overflow-y: auto;
 }
+
+.d-bottom{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 .col-2{
     width: calc(100%/12*2);
     min-height: 80px;
@@ -328,6 +508,7 @@ img{
     padding:0.5rem;
     text-align: center;
 }
+
 .d-resume{
     
     width:100%;
@@ -335,11 +516,14 @@ img{
     margin-right:0;
     
 }
+
 /*end responsive menu*/
     
 }
 @media  screen and (min-width:1024px){
     .t-resume{
         width: 95%;
+        margin-left: 1rem;
+        margin-right:2rem;
     }
 }
