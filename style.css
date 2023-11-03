@@ -110,7 +110,9 @@ h2{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0.5rem;
 }
+
 .c-home{
     display: none;
 }
@@ -189,7 +191,7 @@ h2{
     color: var(--textwhite);
 }
 .selector > li{
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     
 }
 .selector > li > a{
@@ -200,11 +202,10 @@ h2{
 .under-line{
     height:5px;
     width: 40px;
-    background-color: transparent;
-}
-.under-line:hover{
+    border-radius: 5rem;
     background-color: greenyellow;
 }
+
 .c-resume{
     width: 95%;
     height: 100%;
@@ -392,7 +393,7 @@ h2{
     width: 120px;
     height: 40px;
     display: block;
-    margin: 0.5rem 0.75rem;
+    margin: 1rem 0.75rem;
    }
 .d-logo{
     display: none;
@@ -401,7 +402,7 @@ h2{
 .c-home{
     display: flex;
     flex-direction: column;
-    margin: 0.5rem 0.75rem;
+    margin: 0 0.75rem;
 
 }
 .c-home li{
@@ -411,23 +412,26 @@ h2{
     display: flex;
     align-items: center;
     font-size: small;
-    font-weight: lighter;
+    font-weight: bolder;
+}
+.c-home > ul > li > a:hover{
+    color:var(--textwhite);
 }
 .d-home{
     display: none;
 }
    
 .playlist{
-    display:block;
-    
+    display:block;    
 }
-
-
 .playlist li{
     margin: 1rem;
     color: var(--textgray);
     font-size: x-small;
     font-weight: bold;
+}
+.playlist > ul > li > a:hover{
+    color:var(--textwhite);
 }
 .playlist h3{
     margin: 1rem;
@@ -459,12 +463,17 @@ h2{
     display:flex;
     align-items: center;
     margin: 0.5rem 0.75rem;
-    color: var(--textgray);
+    
 }
-.d-app-download span{
+.d-app-download a{
     margin: 0rem 0.5rem;
+    color: var(--textgray);
+    font-weight: bolder;
+    font-size: smaller;
 }
-   
+.d-app-download a:hover{
+    color: var(--textwhite);
+} 
 .c-app-download{
     display:none;
    }
