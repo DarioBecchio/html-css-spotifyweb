@@ -91,7 +91,8 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--sidebar);   
+    background-color: var(--sidebar); 
+    overflow-y: hidden;  
 }
 .c-logo{
     display: none;    
@@ -246,8 +247,6 @@ h2{
     min-width: 40px;
    
 }
-
-
 .push:hover{
    color: white;
 }
@@ -327,6 +326,9 @@ h2{
     justify-content: center;
     flex-grow: 2;
 }
+.center span{
+    color: var(--textwhite);
+}
 .play-button{
     display: flex;
     justify-content: space-evenly;
@@ -345,10 +347,21 @@ h2{
     justify-content: center;  
 }
 .white-line{
-    width: 60%;
+    width: 0%;
     height:4px;
     background-color: var(--mainmenu);
     border-radius: 5px;
+    animation-name: play-song;
+    animation-duration: 60s;   
+    animation-iteration-count: 3;
+}
+
+@keyframes play-song {
+    0%    {width: 0%;}
+    25%   {width: 25%;}
+    50%   {width: 50%;}
+    75%   {width: 75%;}
+    100%  { width: 100%;}
 }
 .grey-line{
     width: 100%;
@@ -374,6 +387,9 @@ h2{
 .right a {
     margin: 0 0.5rem;
     font-size: smaller;
+}
+.right a:hover{
+    color: var(--textwhite);
 }
 .volume-bar{
     width: 50px;
